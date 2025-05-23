@@ -10,7 +10,7 @@ import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { setActiveNote } from "../../store/journal";
 
-export const SidebarItem = ({ title, id, body, date, imageUrls }) => {
+export const SidebarItem = ({ title, id, body, date, imageUrls = [] }) => {
   const dispatch = useDispatch();
 
   const newTitle = useMemo(() => {
@@ -22,8 +22,8 @@ export const SidebarItem = ({ title, id, body, date, imageUrls }) => {
   };
 
   return (
-    <ListItem key={id} disablePadding onClick={onClickNote}>
-      <ListItemButton>
+    <ListItem key={id} disablePadding>
+      <ListItemButton onClick={onClickNote}>
         <ListItemIcon>
           <TurnedInNot />
         </ListItemIcon>
