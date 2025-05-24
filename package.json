@@ -14,6 +14,7 @@
     "@mui/material": "^5.8.0",
     "@reduxjs/toolkit": "^2.8.1",
     "firebase": "^11.7.1",
+    "journal-app": "link:",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^9.2.0",

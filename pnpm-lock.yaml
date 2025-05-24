@@ -26,6 +26,9 @@ importers:
       firebase:
         specifier: ^11.7.1
         version: 11.7.1
+      journal-app:
+        specifier: 'link:'
+        version: 'link:'
       react:
         specifier: ^18.0.0
         version: 18.3.1
