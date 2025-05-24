@@ -8,7 +8,7 @@ import {
   setSaving,
   updateNotes,
 } from "./";
-import { loadNotes } from "../../helpers";
+import { fileUpload, loadNotes } from "../../helpers";
 
 export const startNewNote = () => {
   return async (dispatch, getState) => {
@@ -64,6 +64,6 @@ export const startSaveNote = () => {
 export const startUploadingFiles = (files = []) => {
   return async (dispatch) => {
     dispatch(setSaving());
-    console.log(files);
+    await fileUpload(files[0]);
   };
 };
