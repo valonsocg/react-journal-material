@@ -3,7 +3,7 @@ import { fileUpload } from "../../helpers/fileUpload";
 describe("pruebas en fileUpload", () => {
   test("debe de subir el archivo correctamente a cloudinary", async () => {
     const imageUrl =
-      "https://i.pinimg.com/736x/ac/53/c7/ac53c746c0b570df28f47c53f84657e6.jpg";
+      "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhaXNhamV8ZW58MHx8MHx8fDA%3D";
     const resp = await fetch(imageUrl);
     const blob = await resp.blob();
     const file = new File([blob], "foto.jpg");
