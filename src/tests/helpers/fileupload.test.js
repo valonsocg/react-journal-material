@@ -1,4 +1,12 @@
+import { v2 as cloudinary } from "cloudinary";
 import { fileUpload } from "../../helpers/fileUpload";
+
+cloudinary.config({
+  cloud_name: "alonsodev",
+  api_key: "",
+  api_secret: "",
+  secure: true,
+});
 
 describe("pruebas en fileUpload", () => {
   test("debe de subir el archivo correctamente a cloudinary", async () => {
@@ -10,5 +18,12 @@ describe("pruebas en fileUpload", () => {
 
     const url = await fileUpload(file);
     expect(typeof url).toBe("string");
+  });
+
+  test("debe de retornar null", async () => {
+    const file = new File([], "foto.jpg");
+
+    const url = await fileUpload(file);
+    expect(url).toBe(null);
   });
 });
