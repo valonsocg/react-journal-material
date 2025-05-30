@@ -3,8 +3,8 @@ import { fileUpload } from "../../helpers/fileUpload";
 
 cloudinary.config({
   cloud_name: "alonsodev",
-  api_key: "",
-  api_secret: "",
+  api_key: "135352593279663",
+  api_secret: "7hjaWCCqWifPrb94ZtgFcCH--Dg",
   secure: true,
 });
 
@@ -18,6 +18,14 @@ describe("pruebas en fileUpload", () => {
 
     const url = await fileUpload(file);
     expect(typeof url).toBe("string");
+
+    // console.log(url);
+    const segments = url.split("/");
+    const imageId = segments[segments.length - 1].replace(".jpg", "");
+    const cloudResp = await cloudinary.api.delete_resources([imageId], {
+      resource_type: "image",
+    });
+    // console.log({ cloudResp });
   });
 
   test("debe de retornar null", async () => {
